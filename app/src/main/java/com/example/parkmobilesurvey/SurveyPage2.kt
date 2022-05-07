@@ -16,8 +16,8 @@ class SurveyPage2 : AppCompatActivity() {
         previous1 = findViewById(R.id.previous1)
         next2 = findViewById(R.id.next2)
 
-
-
-
     }
+
+
+
 }
