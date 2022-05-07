@@ -56,14 +56,11 @@ import com.google.android.gms.maps.model.*
 //import com.google.android.gms.location.LocationServices
 import java.util.jar.Manifest
 
-class  MainActivity : AppCompatActivity(), OnMapReadyCallback {
-
+class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
     private lateinit var binding: MainActivityBinding
     private lateinit var namePark: String
     private lateinit var next: Button
-
-
 
     private var latitude:Double= 0.toDouble()
     private var longitude: Double = 0.toDouble()
@@ -78,8 +75,6 @@ class  MainActivity : AppCompatActivity(), OnMapReadyCallback {
     companion object{
         private const val MY_PERMISSION_CODE:Int = 1000
     }
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -96,8 +91,6 @@ class  MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
         next = findViewById(R.id.survey)
 
-
-
         val user = arrayOf("Fairland Recreational Park", "Fairland Regional Park",
             "Edgewood Neighborhood Park","Wheaton Regional Park", "Park At Fairland",
             "Maryland-National Capital Park","Martin Luther King Jr. Recreational Park",
@@ -111,7 +104,6 @@ class  MainActivity : AppCompatActivity(), OnMapReadyCallback {
         val userAdapter: ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_1, user)
         binding.list.adapter = userAdapter
 
-
         binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(p0: String?): Boolean {
                 binding.search.clearFocus()
@@ -121,25 +113,19 @@ class  MainActivity : AppCompatActivity(), OnMapReadyCallback {
                         namePark = p0
                     }
                     Toast.makeText(applicationContext,namePark,Toast.LENGTH_SHORT).show()
-
                 }
-
                 return false
             }
-
 
             override fun onQueryTextChange(p0: String?): Boolean {
                 userAdapter.filter.filter(p0)
                 return false
             }
-
         })
 
         next.setOnClickListener {
             val intent = Intent(this, pageOneSurvey::class.java)
-
             startActivity(intent)
-
         }
 
 
@@ -339,10 +325,6 @@ class  MainActivity : AppCompatActivity(), OnMapReadyCallback {
 //        }
 
         mMap.uiSettings.isZoomControlsEnabled=true
-
-
     }
-
-
 }
 
