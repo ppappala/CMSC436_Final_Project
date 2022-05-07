@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ParkMobileSurvey">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCCCti9BNHiTTZv-gik-OZ5JcErq_unkcs" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
