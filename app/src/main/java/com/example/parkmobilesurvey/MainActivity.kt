@@ -25,6 +25,7 @@ package com.example.parkmobilesurvey
 
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationRequest
@@ -33,6 +34,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -58,8 +60,8 @@ class  MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: MainActivityBinding
-    private lateinit var name: String
-
+    private lateinit var namePark: String
+    private lateinit var next: Button
 
 
 
@@ -92,6 +94,10 @@ class  MainActivity : AppCompatActivity(), OnMapReadyCallback {
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
+        next = findViewById(R.id.survey)
+
+
+
         val user = arrayOf("Fairland Recreational Park", "Fairland Regional Park",
             "Edgewood Neighborhood Park","Wheaton Regional Park", "Park At Fairland",
             "Maryland-National Capital Park","Martin Luther King Jr. Recreational Park",
@@ -112,9 +118,9 @@ class  MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 if(user.contains(p0)){
                     userAdapter.filter.filter(p0)
                     if (p0 != null) {
-                        name = p0
+                        namePark = p0
                     }
-                    Toast.makeText(applicationContext,name,Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,namePark,Toast.LENGTH_SHORT).show()
 
                 }
 
@@ -128,6 +134,17 @@ class  MainActivity : AppCompatActivity(), OnMapReadyCallback {
             }
 
         })
+
+        next.setOnClickListener {
+            val intent = Intent(this, pageOneSurvey::class.java)
+
+            startActivity(intent)
+
+        }
+
+
+
+
 //        Toast.makeText(this,name,Toast.LENGTH_SHORT)
 
 //        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.M)
