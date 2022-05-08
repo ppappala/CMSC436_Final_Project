@@ -27,7 +27,7 @@ class pageOneSurvey : AppCompatActivity() {
         parkname = findViewById(R.id.textView11)
         val intent = intent
         val parknaame = intent.getStringExtra("park")
-        parkname.text ="From "+ parknaame
+        parkname.text ="For "+ parknaame
         next = findViewById(R.id.next)
 
         next.setOnClickListener{
@@ -40,7 +40,6 @@ class pageOneSurvey : AppCompatActivity() {
                 Toast.makeText(this, "You must answer all the questions", Toast.LENGTH_SHORT).show()
 
             }else{
-                complete.text = check1.toString() + check2.toString()
                 //create Intent here
 
                 radio1 = findViewById(check1)
