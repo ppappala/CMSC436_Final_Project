@@ -5,11 +5,13 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.widget.*
 
 class pageThreeSurvey : AppCompatActivity() {
     private lateinit var test : TextView
     private lateinit var editText : EditText
+    private lateinit var submit: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,17 +28,24 @@ class pageThreeSurvey : AppCompatActivity() {
         val fifthAns = intent1.getStringExtra("A5")
 
 
-        //editText = findViewById(R.id.editText)
-        test = findViewById(R.id.testText)
-        test.text ="place the text here"
+        editText = findViewById(R.id.editText)
+        submit = findViewById(R.id.button2)
 
-//        val sixthAns = editText.text
-//        if(sixthAns.length == 0) {
-//            Toast.makeText(this, "You must enter feedback", Toast.LENGTH_SHORT).show()
-//        }
-//        else{
-//            Toast.makeText(this, "Survey answers saved", Toast.LENGTH_SHORT).show()
-//        }
+        submit.setOnClickListener {
+
+            val sixthAns: String = editText.text.toString()
+            if(sixthAns.isEmpty()) {
+                Toast.makeText(this, "You must enter feedback", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(this, sixthAns +"Survey answers saved", Toast.LENGTH_SHORT).show()
+                // maybe do the saving data here
+                //finish()
+
+            }
+
+        }
+
 
 
     }
