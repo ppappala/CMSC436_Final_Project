@@ -26,6 +26,10 @@ class pageThreeSurvey : AppCompatActivity() {
         val thirdAns = intent1.getStringExtra("A3")
         val fourthAns = intent1.getStringExtra("A4")
         val fifthAns = intent1.getStringExtra("A5")
+        val sixthAns = intent1.getStringExtra("A4")
+        val starAns = intent1.getStringExtra("A7")
+        val eighthAns = intent1.getStringExtra("A8") //from previous activity
+
 
 
         editText = findViewById(R.id.editText)
@@ -38,7 +42,7 @@ class pageThreeSurvey : AppCompatActivity() {
                 Toast.makeText(this, "You must enter feedback", Toast.LENGTH_SHORT).show()
             }
             else{
-                Toast.makeText(this, sixthAns +"Survey answers saved", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Survey answers saved", Toast.LENGTH_SHORT).show()
                 // maybe do the saving data here
                 //finish()
 

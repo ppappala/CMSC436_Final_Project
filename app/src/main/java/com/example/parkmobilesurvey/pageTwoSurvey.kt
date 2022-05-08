@@ -63,7 +63,7 @@ class pageTwoSurvey : AppCompatActivity() {
 
             val check7: Float = stars.rating
 
-            val check8: Int = group8.checkedRadioButtonId
+            val check8: Int = group8.checkedRadioButtonId //
 
 
 
@@ -101,7 +101,7 @@ class pageTwoSurvey : AppCompatActivity() {
                 intent1.putExtra("A5", fifthAns) // uncommented
                 intent1.putExtra("A6", sixthAns)
                 intent1.putExtra("A7", check7) // passed in number of stars
-                intent1.putExtra("A8", check8)
+                intent1.putExtra("A8", eighthAns)
                 startActivity(intent1)
             }
 
