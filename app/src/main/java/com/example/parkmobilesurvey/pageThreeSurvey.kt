@@ -26,7 +26,7 @@ class pageThreeSurvey : AppCompatActivity() {
         val thirdAns = intent1.getStringExtra("A3")
         val fourthAns = intent1.getStringExtra("A4")
         val fifthAns = intent1.getStringExtra("A5")
-        val sixthAns = intent1.getStringExtra("A4")
+        val sixthAns = intent1.getStringExtra("A6")
         val starAns = intent1.getStringExtra("A7")
         val eighthAns = intent1.getStringExtra("A8") //from previous activity
 
