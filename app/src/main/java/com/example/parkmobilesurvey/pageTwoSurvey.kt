@@ -15,10 +15,12 @@ class pageTwoSurvey : AppCompatActivity() {
     private lateinit var next2: Button
     private lateinit var group3: RadioGroup
     private lateinit var group4: RadioGroup
-    //private lateinit var group5: RadioGroup you forgot this keya
+    private lateinit var group5: RadioGroup
     private lateinit var radio3: RadioButton
     private lateinit var radio4: RadioButton
-  //  private lateinit var radio5: RadioButton  and this too
+    private lateinit var radio5: RadioButton
+
+    // added back radiogroup 5 and button
 
 
     lateinit var sharedPreferences: SharedPreferences
@@ -30,7 +32,7 @@ class pageTwoSurvey : AppCompatActivity() {
         next2 = findViewById(R.id.next2)
         group3 = findViewById(R.id.radioGroup3)
         group4 = findViewById(R.id.radioGroup4)
- //       group5 = findViewById(R.id.radioGroup5)
+        group5 = findViewById(R.id.radioGroup5)
 
 
 
@@ -44,7 +46,7 @@ class pageTwoSurvey : AppCompatActivity() {
 
             //the checked radio button for fifth quesiton
 
-            //val check5: Int = group5.checkedRadioButtonId
+            val check5: Int = group5.checkedRadioButtonId //uncommented
 
 
 
@@ -57,11 +59,11 @@ class pageTwoSurvey : AppCompatActivity() {
             }else {
                 radio3 = findViewById(check3)
                 radio4 = findViewById(check4)
-                //radio5 = findViewById(check5)
+                radio5 = findViewById(check5) //
 
                 val thirdAns = radio3.text
                 val fourthAns = radio4.text
-             //   val fifthAns = radio5.text
+                val fifthAns = radio5.text //
                 val parkName = intent2.getStringExtra("park")
                 val firstAns = intent2.getStringExtra("A1")
                 val secondAns = intent2.getStringExtra("A2")
@@ -73,7 +75,7 @@ class pageTwoSurvey : AppCompatActivity() {
                 intent1.putExtra("A2", secondAns)
                 intent1.putExtra("A3", thirdAns)
                 intent1.putExtra("A4", fourthAns)
-               // intent1.putExtra("A5", fifthAns)
+                intent1.putExtra("A5", fifthAns) // uncommented
                 startActivity(intent1)
             }
 
