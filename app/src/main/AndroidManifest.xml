@@ -10,8 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ParkMobileSurvey">
         <activity
+            android:name=".pageThreeSurvey"
+            android:exported="true" />
+
+        <activity
+            android:name=".pageTwoSurvey"
+            android:exported="true" />
+
+
+        <activity
             android:name=".pageOneSurvey"
-            android:exported="false" />
+            android:exported="true" />
+
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
