@@ -10,7 +10,7 @@ import android.widget.*
 class pageThreeSurvey : AppCompatActivity() {
     private lateinit var test : TextView
     private lateinit var editText : EditText
-    lateinit var preferences: SharedPreferences
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

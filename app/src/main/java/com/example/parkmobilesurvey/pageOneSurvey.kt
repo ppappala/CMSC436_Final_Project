@@ -41,17 +41,18 @@ class pageOneSurvey : AppCompatActivity() {
 
             }else{
                 complete.text = check1.toString() + check2.toString()
-                // create Intent here
-                val intent = Intent(this, pageTwoSurvey::class.java)
+                //create Intent here
+
                 radio1 = findViewById(check1)
                 radio2 = findViewById(check2)
 
+                val intent2 = Intent(this, pageTwoSurvey::class.java)
                 val firstAns = radio1.text
                 val secondAns = radio2.text
-                intent.putExtra("park", parknaame)
-                intent.putExtra("A1", firstAns)
-                intent.putExtra("A2", secondAns)
-                startActivity(intent)
+                intent2.putExtra("park", parknaame)
+                intent2.putExtra("A1", firstAns)
+                intent2.putExtra("A2", secondAns)
+                startActivity(intent2)
 
                 // maybe use radiobutton variable = findViewByid(check1)
                 // and radiobutton variable2 = findViewByid(check2)
@@ -60,6 +61,7 @@ class pageOneSurvey : AppCompatActivity() {
 
 
             }
+
         }
 
 
