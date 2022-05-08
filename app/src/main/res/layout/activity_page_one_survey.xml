@@ -11,7 +11,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="202dp"
@@ -27,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#FF0F33"
-                android:text="very clean"
+                android:text="Very clean"
                 android:textColorHighlight="#FFFFFF"
                 android:textColorHint="#FFFFFF"
                 android:textColorLink="#FFFFFF" />
@@ -38,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#FF0015"
-                android:text="clean" />
+                android:text="Clean" />
 
             <RadioButton
                 android:id="@+id/radio3"
@@ -113,7 +112,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#FF0026"
-                android:text="safe" />
+                android:text="Safe" />
 
             <RadioButton
                 android:id="@+id/radiosafe3"
@@ -134,7 +133,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#FF0008"
-                android:text="Very Dangerous" />
+                android:text="Very dangerous" />
         </RadioGroup>
 
         <Button
@@ -164,11 +163,13 @@
 
         <TextView
             android:id="@+id/textView9"
+            android:fontFamily="sans-serif-medium"
             android:layout_width="403dp"
-            android:layout_height="124dp"
+            android:layout_height="64dp"
             android:layout_marginTop="12dp"
+            android:textAlignment="center"
             android:text="Your feedback is much appreciated in helping make our local parks
-safer. Please put the address of the park you wish to evaluate below"
+safer."
             android:textColor="#000000"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -197,6 +198,7 @@ safer. Please put the address of the park you wish to evaluate below"
             android:text="MD Park Survey"
             android:textColor="#FFFFFF"
             android:textSize="40sp"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
