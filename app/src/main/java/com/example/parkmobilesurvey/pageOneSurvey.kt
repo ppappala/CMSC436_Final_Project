@@ -1,5 +1,6 @@
 package com.example.parkmobilesurvey
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
@@ -12,6 +13,7 @@ class pageOneSurvey : AppCompatActivity() {
     private lateinit var next: Button
 
     private lateinit var complete: TextView
+    private lateinit var parkname: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +24,10 @@ class pageOneSurvey : AppCompatActivity() {
 
 
         complete = findViewById(R.id.textView6)
+        parkname = findViewById(R.id.textView11)
+        val intent = intent
+        val parknaame = intent.getStringExtra("park")
+        parkname.text ="From"+ parknaame
         next = findViewById(R.id.next)
 
         next.setOnClickListener{
@@ -31,10 +37,15 @@ class pageOneSurvey : AppCompatActivity() {
 
 
             if(check1 < 0 || check2< 0){
-                Toast.makeText(this, "you must click all question", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "You must answer all the questions", Toast.LENGTH_SHORT).show()
 
             }else{
                 complete.text = check1.toString() + check2.toString()
+                // create Intent here
+                // maybe use radiobutton variable = findViewByid(check1)
+                // and radiobutton variable2 = findViewByid(check2)
+                // save those variable in the intent (the string name of the button)
+                // Then start acitvity 2 for the second page
 
             }
         }

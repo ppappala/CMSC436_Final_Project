@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var binding: MainActivityBinding
     private lateinit var namePark: String
     private lateinit var next: Button
+    private final val EXTRA: String = "park"
 
     private var latitude:Double= 0.toDouble()
     private var longitude: Double = 0.toDouble()
@@ -74,6 +75,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     companion object{
         private const val MY_PERMISSION_CODE:Int = 1000
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -125,6 +127,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
         next.setOnClickListener {
             val intent = Intent(this, pageOneSurvey::class.java)
+            intent.putExtra(EXTRA, namePark)
+
             startActivity(intent)
         }
 
@@ -143,6 +147,10 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 //        fusedLocationProviderClient.requestLocationUpdates(locationRequest,locationCallback,
 //            Looper.myLooper()!!)
     }
+
+//    public fun ParkName(): String {
+//        return namePark
+//    }
 
 //    private fun buildLocationCallBack() {
 //        locationCallback = object: LocationCallback(){
