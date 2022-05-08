@@ -16,9 +16,9 @@
             android:id="@+id/radioGroup3"
             android:layout_width="202dp"
             android:layout_height="250dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.071"
+            app:layout_constraintHorizontal_bias="0.057"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4">
 
@@ -26,6 +26,7 @@
                 android:id="@+id/radio1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:buttonTint="#FF0008"
                 android:text="Friendly" />
 
             <RadioButton
@@ -33,6 +34,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:buttonTint="#FF0008"
                 android:text="Neutral" />
 
             <RadioButton
@@ -40,6 +42,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:buttonTint="#FF0015"
                 android:text="Hostile" />
 
             <RadioButton
@@ -47,6 +50,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:buttonTint="#FF0000"
                 android:text="Very Hostile" />
 
 
@@ -56,11 +60,12 @@
             android:id="@+id/textView4"
             android:layout_width="322dp"
             android:layout_height="31dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="24dp"
             android:text="How friendly was the park staff?"
+            android:textColor="#000000"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.134"
+            app:layout_constraintHorizontal_bias="0.056"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -70,17 +75,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:text="How accessible were the drinking fountains?"
+            android:textColor="#000000"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.064"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup3" />
 
+
         <RadioGroup
             android:id="@+id/radioGroup4"
             android:layout_width="191dp"
             android:layout_height="265dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.068"
             app:layout_constraintStart_toStartOf="parent"
@@ -90,29 +97,31 @@
                 android:id="@+id/r1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:buttonTint="#FF0015"
                 android:text="Highly Accessible" />
 
             <RadioButton
                 android:id="@+id/radiosafe2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:buttonTint="#FF001E"
                 android:text="Somewhat Accessible" />
 
             <RadioButton
                 android:id="@+id/radiosafe3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:buttonTint="#FF0000"
                 android:text="Seldom Accessible" />
 
             <RadioButton
                 android:id="@+id/radiosafe4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:buttonTint="#FF0015"
                 android:text="Not Accessible" />
 
         </RadioGroup>
-
-
 
         <TextView
             android:id="@+id/textEnjoy"
@@ -120,6 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:text="How enjoyable was your stay?"
+            android:textColor="#000000"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.064"
@@ -130,7 +140,7 @@
             android:id="@+id/radioGroup5"
             android:layout_width="191dp"
             android:layout_height="265dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.068"
             app:layout_constraintStart_toStartOf="parent"
@@ -140,30 +150,35 @@
                 android:id="@+id/r2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:buttonTint="#FF0000"
                 android:text="Very enjoyable" />
 
             <RadioButton
                 android:id="@+id/r3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:buttonTint="#FF0000"
                 android:text="Somewhat Enjoyable" />
 
             <RadioButton
                 android:id="@+id/r4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:buttonTint="#FF0008"
                 android:text="Neutral" />
 
             <RadioButton
                 android:id="@+id/r5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:buttonTint="#FF0000"
                 android:text="Unpleasant" />
 
             <RadioButton
                 android:id="@+id/r6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:buttonTint="#FF0015"
                 android:text="Very Unpleasea" />
         </RadioGroup>
 
@@ -172,6 +187,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:backgroundTint="#FF0F17"
             android:text="Next"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -191,12 +207,15 @@
 
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="409dp"
-            android:layout_height="47dp"
+            android:layout_width="407dp"
+            android:layout_height="55dp"
             android:layout_marginTop="4dp"
+            android:background="#F4511E"
             android:text="MD Park Survey"
+            android:textColor="#FFFFFF"
             android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
