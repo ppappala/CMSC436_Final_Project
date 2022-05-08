@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+<RelativeLayout xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools2="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".MainActivity">
+
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="491dp"
+        android:layout_below="@+id/survey"
+        android:layout_marginTop="4dp"
+        tools:context=".MainActivity" />
+
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:iconifiedByDefault="false"
+        android:queryHint="Enter name of the park" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="118dp"
+        android:layout_below="@id/search" />
 
     <Button
-        android:id="@+id/next1"
+        android:id="@+id/survey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next" />
-</FrameLayout>
+        android:layout_below="@+id/list"
+        android:layout_marginTop="6dp"
+        android:text="Button" />
+
+</RelativeLayout>
