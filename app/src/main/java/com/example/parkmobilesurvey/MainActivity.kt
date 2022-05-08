@@ -33,13 +33,12 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.SearchView
-import android.widget.Toast
+import android.view.View
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.view.get
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -91,8 +90,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        next = findViewById(R.id.survey)
-
         val user = arrayOf("Fairland Recreational Park", "Fairland Regional Park",
             "Edgewood Neighborhood Park","Wheaton Regional Park", "Park At Fairland",
             "Maryland-National Capital Park","Martin Luther King Jr. Recreational Park",
@@ -105,6 +102,16 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val userAdapter: ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_1, user)
         binding.list.adapter = userAdapter
+
+        binding.list.setOnItemClickListener(object : AdapterView.OnItemClickListener {
+            override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                val intent = Intent(this@MainActivity, pageOneSurvey::class.java)
+                Toast.makeText(applicationContext,user[p2],Toast.LENGTH_SHORT).show()
+                intent.putExtra(EXTRA, user[p2])
+
+                startActivity(intent)
+            }
+        })
 
         binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(p0: String?): Boolean {
@@ -124,16 +131,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 return false
             }
         })
-
-        next.setOnClickListener {
-            val intent = Intent(this, pageOneSurvey::class.java)
-            intent.putExtra(EXTRA, namePark)
-
-            startActivity(intent)
-        }
-
-
-
 
 //        Toast.makeText(this,name,Toast.LENGTH_SHORT)
 

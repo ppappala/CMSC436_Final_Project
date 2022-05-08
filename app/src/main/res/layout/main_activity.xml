@@ -14,8 +14,7 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="491dp"
-        android:layout_below="@+id/survey"
-        android:layout_marginTop="4dp"
+        android:layout_below="@id/list"
         tools:context=".MainActivity" />
 
     <SearchView
@@ -30,13 +29,5 @@
         android:layout_width="match_parent"
         android:layout_height="118dp"
         android:layout_below="@id/search" />
-
-    <Button
-        android:id="@+id/survey"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/list"
-        android:layout_marginTop="6dp"
-        android:text="Start Survey" />
 
 </RelativeLayout>
