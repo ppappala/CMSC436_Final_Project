@@ -38,17 +38,25 @@ class pageThreeSurvey : AppCompatActivity() {
 
         submit.setOnClickListener {
 
-            val sixthAns: String = editText.text.toString()
-            if(sixthAns.isEmpty()) {
-                Toast.makeText(this, "You must enter feedback", Toast.LENGTH_SHORT).show()
+            val ninthAnswer: String = editText.text.toString()
+            val db = FirebaseDatabase.getInstance();
+            val ref = db.getReference("survey submission")
+            val answers = "Park name: " + parkName +
+                    ", Cleanliness of park: " + firstAns +
+                    ", Safety of park: " + secondAns +
+                    ", Friendliness of park staff: " + thirdAns +
+                    ", Accessibility of drinking fountains: " + fourthAns +
+                    ", Recommendation of park to friend: "+ sixthAns +
+                    ", Enjoyability of stay: " + fifthAns +
+                    ", Please rate us: " + seventhAns +
+                    ", Planned activities happened as expected: " + eighthAns +
+                    ", Additional recommendations: " + ninthAnswer
+            val surveyId = ref.push().key
+            if (surveyId != null) {
+                ref.child(surveyId).setValue(answers)
             }
-            else{
-                val ref = FirebaseDatabase.getInstance().reference
-                Toast.makeText(this, "Survey answers submitted", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, MainActivity::class.java))
-
-            }
-
+            Toast.makeText(this, "Survey answers submitted", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
 
