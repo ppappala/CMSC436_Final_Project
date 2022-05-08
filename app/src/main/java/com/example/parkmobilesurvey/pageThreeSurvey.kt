@@ -43,8 +43,7 @@ class pageThreeSurvey : AppCompatActivity() {
             }
             else{
                 Toast.makeText(this, "Survey answers saved", Toast.LENGTH_SHORT).show()
-                // maybe do the saving data here
-                //finish()
+                startActivity(Intent(this, MainActivity::class.java))
 
             }
 
