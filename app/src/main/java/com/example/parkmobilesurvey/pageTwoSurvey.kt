@@ -21,59 +21,59 @@ class pageTwoSurvey : AppCompatActivity() {
     private lateinit var radio5: RadioButton
 
 
-    lateinit var sharedPreferences: SharedPreferences
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page_two_survey)
 
-        sharedPreferences = getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
-        previous1 = findViewById(R.id.previous1)
-        next2 = findViewById(R.id.next2)
+
+//        previous1 = findViewById(R.id.previous1)
+//        next2 = findViewById(R.id.next2)
         group3 = findViewById(R.id.radioGroup3)
         group4 = findViewById(R.id.radioGroup4)
-        group5 = findViewById(R.id.radioGroup5)
+//        group5 = findViewById(R.id.radioGroup5)
 
 
 
         next2.setOnClickListener {
 
+//                //the checked radio button for third quesiton
+//                val check3: Int = group3.checkedRadioButtonId
+//
+//                //the checked radio button for fourth quesiton
+//                val check4: Int = group4.checkedRadioButtonId
+//
+//                //the checked radio button for fifth quesiton
+//                val check5: Int = group5.checkedRadioButtonId
+//
+//                val intent = Intent(this, pageThreeSurvey::class.java)
+//
+//            if(check3 < 0 || check4 < 0 || check5 < 0){
+//                Toast.makeText(this, "You must answer all the questions", Toast.LENGTH_SHORT).show()
+//
+//            }else {
+//                radio3 = findViewById(check3)
+//                radio4 = findViewById(check4)
+//                radio5 = findViewById(check5)
+//
+//                val thirdAns = radio3.text
+//                val fourthAns = radio4.text
+//                val fifthAns = radio5.text
+////                val parkName = intent.getStringExtra("park")
+////                val firstAns = intent.getStringExtra("A1")
+////                val secondAns = intent.getStringExtra("A2")
+//
+////                intent.putExtra("park", parkName)
+////                intent.putExtra("A1", firstAns)
+////                intent.putExtra("A2", secondAns)
+////                intent.putExtra("A3", thirdAns)
+////                intent.putExtra("A4", fourthAns)
+////                intent.putExtra("A5", fifthAns)
+////                startActivity(intent)
+//            }
 
+            val intent = Intent(this, pageThreeSurvey::class.java)
+            startActivity(intent)
 
-                //the checked radio button for third quesiton
-                val check3: Int = group3.checkedRadioButtonId
-
-                //the checked radio button for fourth quesiton
-                val check4: Int = group4.checkedRadioButtonId
-
-                //the checked radio button for fifth quesiton
-                val check5: Int = group5.checkedRadioButtonId
-
-                val intent = Intent(this, pageThreeSurvey::class.java)
-
-            if(check3 < 0 || check4 < 0 || check5 < 0){
-                Toast.makeText(this, "You must answer all the questions", Toast.LENGTH_SHORT).show()
-
-            }else {
-                radio3 = findViewById(check3)
-                radio4 = findViewById(check4)
-                radio5 = findViewById(check5)
-
-                val thirdAns = radio3.text
-                val fourthAns = radio4.text
-                val fifthAns = radio5.text
-                val parkName = intent.getStringExtra("park")
-                val firstAns = intent.getStringExtra("A1")
-                val secondAns = intent.getStringExtra("A2")
-
-                intent.putExtra("park", parkName)
-                intent.putExtra("A1", firstAns)
-                intent.putExtra("A2", secondAns)
-                intent.putExtra("A3", thirdAns)
-                intent.putExtra("A4", fourthAns)
-                intent.putExtra("A5", fifthAns)
-                startActivity(intent)
-            }
 
         }
 
