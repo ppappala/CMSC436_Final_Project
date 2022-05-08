@@ -27,7 +27,7 @@ class pageOneSurvey : AppCompatActivity() {
         parkname = findViewById(R.id.textView11)
         val intent = intent
         val parknaame = intent.getStringExtra("park")
-        parkname.text ="From"+ parknaame
+        parkname.text ="From "+ parknaame
         next = findViewById(R.id.next)
 
         next.setOnClickListener{

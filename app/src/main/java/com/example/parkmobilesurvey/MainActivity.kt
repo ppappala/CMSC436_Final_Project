@@ -106,9 +106,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         binding.list.setOnItemClickListener(object : AdapterView.OnItemClickListener {
             override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 val intent = Intent(this@MainActivity, pageOneSurvey::class.java)
-                Toast.makeText(applicationContext,user[p2],Toast.LENGTH_SHORT).show()
-                intent.putExtra(EXTRA, user[p2])
-
+                val search = p0!!.getItemAtPosition(p2)
+                val query = search.toString()
+                intent.putExtra(EXTRA, query)
                 startActivity(intent)
             }
         })
@@ -118,10 +118,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 binding.search.clearFocus()
                 if(user.contains(p0)){
                     userAdapter.filter.filter(p0)
-                    if (p0 != null) {
-                        namePark = p0
-                    }
-                    Toast.makeText(applicationContext,namePark,Toast.LENGTH_SHORT).show()
                 }
                 return false
             }
