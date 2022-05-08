@@ -88,7 +88,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             "Beltsville Neighborhood Park","Stonehedge Local Park","Kemp Mill Urban Park",
             "Wheaton Regional Park Adventure Playground","Maryland-National Capital Park Silver Spring",
             "Pilgrim Hills Local Park","Patapsco Valley State Park - Hollofield Area","Greenbelt Park",
-            "Watkins Regional Park")
+            "Watkins Regional Park","Scotts Cove Recreation Area","Tire Park","Centennial Park",
+            "Woodlawn Manor Cultural Park","Cabin John Regional Park","Glen Echo Park","Lake Artemesia Natural Area",
+            "Acredale Community Park")
 
         val userAdapter: ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_1, user)
         binding.list.adapter = userAdapter
@@ -304,6 +306,43 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         val watkins  = LatLng(38.889, -76.7886)
         mMap.addMarker(MarkerOptions().position(watkins).title("Watkins Regional Park").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(watkins))
+        // new park
+        val scott  = LatLng(39.1372, -76.8911)
+        mMap.addMarker(MarkerOptions().position(scott).title("Scotts Cove Recreation Area").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(scott))
+
+        val tire  = LatLng(39.2454, -76.7452)
+        mMap.addMarker(MarkerOptions().position(tire).title("Tire Park").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(tire))
+
+        val cent  = LatLng(36.1489, -86.8127)
+        mMap.addMarker(MarkerOptions().position(cent).title("Centennial Park").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(cent))
+
+        val wood  = LatLng(39.1282, -77.0266)
+        mMap.addMarker(MarkerOptions().position(wood).title("Woodlawn Manor Cultural Park").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(wood))
+
+        val cabin  = LatLng(39.0350, -77.1506)
+        mMap.addMarker(MarkerOptions().position(cabin).title("Cabin John Regional Park").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(cabin))
+
+        val glen  = LatLng(38.9660, -77.1387)
+        mMap.addMarker(MarkerOptions().position(glen).title("Glen Echo Park").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(glen))
+
+        val lake  = LatLng(38.9909, -76.9220)
+        mMap.addMarker(MarkerOptions().position(lake).title("Lake Artemesia Natural Area").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(lake))
+
+        val acre  = LatLng(38.9994, -76.9341)
+        mMap.addMarker(MarkerOptions().position(acre).title("Acredale Community Park").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(acre))
+
+
+
+
+
 
 //        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.M){
 //            if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
