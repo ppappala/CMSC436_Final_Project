@@ -5,15 +5,35 @@
     android:id="@+id/t"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:foregroundTint="#F3F2F2"
     tools:context=".pageThreeSurvey">
 
     <TextView
         android:id="@+id/testText"
-        android:layout_width="92dp"
-        android:layout_height="50dp"
-        android:text="Test"
+        android:layout_width="316dp"
+        android:layout_height="25dp"
+        android:text="Additional Suggestions For Improvement"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.621"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.202" />
+
+    <EditText
+        android:layout_width="352dp"
+        android:layout_height="152dp"
+        android:backgroundTint="#000000"
+        android:gravity="top|start"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:maxLines="10"
+        android:minLines="6"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/testText" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
