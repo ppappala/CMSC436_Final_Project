@@ -42,10 +42,22 @@ class pageOneSurvey : AppCompatActivity() {
             }else{
                 complete.text = check1.toString() + check2.toString()
                 // create Intent here
+                val intent = Intent(this, pageTwoSurvey::class.java)
+                radio1 = findViewById(check1)
+                radio2 = findViewById(check2)
+
+                val firstAns = radio1.text
+                val secondAns = radio2.text
+                intent.putExtra("park", parknaame)
+                intent.putExtra("A1", firstAns)
+                intent.putExtra("A2", secondAns)
+                startActivity(intent)
+
                 // maybe use radiobutton variable = findViewByid(check1)
                 // and radiobutton variable2 = findViewByid(check2)
                 // save those variable in the intent (the string name of the button)
                 // Then start acitvity 2 for the second page
+
 
             }
         }

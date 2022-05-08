@@ -16,6 +16,9 @@ class pageTwoSurvey : AppCompatActivity() {
     private lateinit var group3: RadioGroup
     private lateinit var group4: RadioGroup
     private lateinit var group5: RadioGroup
+    private lateinit var radio3: RadioButton
+    private lateinit var radio4: RadioButton
+    private lateinit var radio5: RadioButton
 
 
     lateinit var sharedPreferences: SharedPreferences
@@ -34,29 +37,43 @@ class pageTwoSurvey : AppCompatActivity() {
 
 
         next2.setOnClickListener {
-            //go to next page
-
-            //the checked radio button for third quesiton
-            val checkedRadio3: Int = group3.checkedRadioButtonId
-
-            //the checked radio button for fourth quesiton
-            val checkedRadio4: Int = group4.checkedRadioButtonId
-
-            //the checked radio button for fifth quesiton
-            val checkedRadio5: Int = group5.checkedRadioButtonId
-
-            val editor: SharedPreferences.Editor = sharedPreferences.edit()
 
 
-            editor.putInt("thirdAns", checkedRadio3)
-            editor.putInt("fourthAns", checkedRadio4)
-            editor.putInt("fourthAns", checkedRadio4)
-            editor.putInt("fifthAns", checkedRadio5);
 
-            editor.apply()
+                //the checked radio button for third quesiton
+                val check3: Int = group3.checkedRadioButtonId
 
-            val intent = Intent(this, pageThreeSurvey::class.java)
-            startActivity(intent)
+                //the checked radio button for fourth quesiton
+                val check4: Int = group4.checkedRadioButtonId
+
+                //the checked radio button for fifth quesiton
+                val check5: Int = group5.checkedRadioButtonId
+
+                val intent = Intent(this, pageThreeSurvey::class.java)
+
+            if(check3 < 0 || check4 < 0 || check5 < 0){
+                Toast.makeText(this, "You must answer all the questions", Toast.LENGTH_SHORT).show()
+
+            }else {
+                radio3 = findViewById(check3)
+                radio4 = findViewById(check4)
+                radio5 = findViewById(check5)
+
+                val thirdAns = radio3.text
+                val fourthAns = radio4.text
+                val fifthAns = radio5.text
+                val parkName = intent.getStringExtra("park")
+                val firstAns = intent.getStringExtra("A1")
+                val secondAns = intent.getStringExtra("A2")
+
+                intent.putExtra("park", parkName)
+                intent.putExtra("A1", firstAns)
+                intent.putExtra("A2", secondAns)
+                intent.putExtra("A3", thirdAns)
+                intent.putExtra("A4", fourthAns)
+                intent.putExtra("A5", fifthAns)
+                startActivity(intent)
+            }
 
         }
 
