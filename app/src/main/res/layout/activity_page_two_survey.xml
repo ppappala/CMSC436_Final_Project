@@ -9,68 +9,67 @@ tools:context=".MainActivity"
 android:orientation="vertical">
 
 
+    <TextView
+        android:id="@+id/howFriendly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How friendly was the park staff?"
+        android:textColor="#000000"
+        android:textSize="20sp"
 
-<TextView
-    android:id="@+id/howFriendly"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="How friendly was the park staff?"
-    android:textColor="#000000"
-    android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.132" />
 
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.179"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.132" />
+    <RadioGroup
+        android:id="@+id/radioGroup3"
+        android:layout_width="309dp"
+        android:layout_height="153dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.239">
 
-<RadioGroup
-    android:id="@+id/radioGroup3"
-    android:layout_width="323dp"
-    android:layout_height="155dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.415"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.239">
+        <RadioButton
+            android:id="@+id/veryFriendlyButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Very Friendly"
+            android:textSize="12sp" />
 
-    <RadioButton
-        android:id="@+id/veryFriendlyButton"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:text="Very Friendly"
-        android:textSize="12sp" />
+        <RadioButton
+            android:id="@+id/friendlyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="Friendly"
+            android:textSize="12sp" />
 
-    <RadioButton
-        android:id="@+id/friendlyButton"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:text="Friendly"
-        android:textSize="12sp" />
+        <RadioButton
+            android:id="@+id/neutralButton1"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Neutral"
+            android:textSize="12sp" />
 
-    <RadioButton
-        android:id="@+id/neutralButton1"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:text="Neutral"
-        android:textSize="12sp" />
+        <RadioButton
+            android:id="@+id/hostileButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Hostile"
+            android:textSize="12sp" />
 
-    <RadioButton
-        android:id="@+id/hostileButton"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:text="Hostile"
-        android:textSize="12sp" />
-
-    <RadioButton
-        android:id="@+id/veryHostileButton"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:text="Very Hostile"
-        android:textSize="12sp" />
-</RadioGroup>
+        <RadioButton
+            android:id="@+id/veryHostileButton"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Very Hostile"
+            android:textSize="12sp" />
+    </RadioGroup>
 
 
 <TextView
@@ -100,21 +99,21 @@ android:orientation="vertical">
     <RadioButton
         android:id="@+id/highlyAccessible"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="48dp"
         android:text="Highly Accessible"
         android:textSize="12sp" />
 
     <RadioButton
         android:id="@+id/someWhatAccessible"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="48dp"
         android:text="Somewhat Accessible"
         android:textSize="12sp" />
 
     <RadioButton
         android:id="@+id/seldomAccessible"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="48dp"
         android:text="seldomAccessible"
         android:textSize="12sp" />
 
@@ -155,28 +154,28 @@ android:orientation="vertical">
     <RadioButton
         android:id="@+id/veryEnjoyable"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="48dp"
         android:text="Very Enjoyable"
         android:textSize="12sp" />
 
     <RadioButton
         android:id="@+id/someWhatEnjoy"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="48dp"
         android:text="Somwhat Enjoyable"
         android:textSize="12sp" />
 
     <RadioButton
         android:id="@+id/neutralEnjoy"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="48dp"
         android:text="Neutral"
         android:textSize="12sp" />
 
     <RadioButton
         android:id="@+id/dirtyButton"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="48dp"
         android:text="Dirty"
         android:textSize="12sp" />
 
@@ -200,16 +199,16 @@ android:orientation="vertical">
     app:layout_constraintStart_toStartOf="parent"
     tools:ignore="MissingConstraints" />
 
-<Button
-    android:id="@+id/next2"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Next"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.839"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.964" />
+    <Button
+        android:id="@+id/next2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.839"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964" />
 
 </LinearLayout>
