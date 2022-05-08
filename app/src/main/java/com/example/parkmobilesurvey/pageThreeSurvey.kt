@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.widget.*
+import com.google.firebase.database.FirebaseDatabase
 
 class pageThreeSurvey : AppCompatActivity() {
     private lateinit var test : TextView
@@ -42,7 +43,8 @@ class pageThreeSurvey : AppCompatActivity() {
                 Toast.makeText(this, "You must enter feedback", Toast.LENGTH_SHORT).show()
             }
             else{
-                Toast.makeText(this, "Survey answers saved", Toast.LENGTH_SHORT).show()
+                val ref = FirebaseDatabase.getInstance().reference
+                Toast.makeText(this, "Survey answers submitted", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, MainActivity::class.java))
 
             }
