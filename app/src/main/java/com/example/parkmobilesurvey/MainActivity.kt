@@ -24,36 +24,25 @@ package com.example.parkmobilesurvey
 //}
 
 
-import android.annotation.SuppressLint
+//import com.google.android.gms.location.FusedLocationProviderClient
+//import com.google.android.gms.location.LocationRequest
+//import com.google.android.gms.location.LocationServices
+
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.location.Location
-import android.location.LocationRequest
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Looper
 import android.view.View
 import android.widget.*
-import androidx.annotation.RequiresApi
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import androidx.core.view.get
-
+import androidx.appcompat.app.AppCompatActivity
+import com.example.parkmobilesurvey.databinding.MainActivityBinding
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.example.parkmobilesurvey.databinding.MainActivityBinding
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationResult
-import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.*
-//import com.google.android.gms.location.FusedLocationProviderClient
-//import com.google.android.gms.location.LocationRequest
-//import com.google.android.gms.location.LocationServices
-import java.util.jar.Manifest
+
 
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
@@ -88,6 +77,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
+
         mapFragment.getMapAsync(this)
 
         val user = arrayOf("Fairland Recreational Park", "Fairland Regional Park",
@@ -326,6 +316,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 //        }
 
         mMap.uiSettings.isZoomControlsEnabled=true
+
+        mMap.moveCamera( CameraUpdateFactory.newLatLngZoom(LatLng(39.00,-77.00) , 10.0f) )
     }
 }
 
