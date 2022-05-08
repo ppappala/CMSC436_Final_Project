@@ -19,6 +19,12 @@ class pageTwoSurvey : AppCompatActivity() {
     private lateinit var radio3: RadioButton
     private lateinit var radio4: RadioButton
     private lateinit var radio5: RadioButton
+    private lateinit var group6: RadioGroup
+    private lateinit var radio6: RadioButton
+    private lateinit var group8: RadioGroup
+    private lateinit var radio8: RadioButton
+
+    private lateinit var stars: RatingBar
 
     // added back radiogroup 5 and button
 
@@ -33,6 +39,11 @@ class pageTwoSurvey : AppCompatActivity() {
         group3 = findViewById(R.id.radioGroup3)
         group4 = findViewById(R.id.radioGroup4)
         group5 = findViewById(R.id.radioGroup5)
+        group6 = findViewById(R.id.radioGroup6)
+        group8 = findViewById(R.id.radioGroup8)
+
+        stars = findViewById(R.id.ratingBar)
+
 
 
 
@@ -48,25 +59,37 @@ class pageTwoSurvey : AppCompatActivity() {
 
             val check5: Int = group5.checkedRadioButtonId //uncommented
 
+            val check6: Int = group6.checkedRadioButtonId
+
+            val check7: Float = stars.rating
+
+            val check8: Int = group8.checkedRadioButtonId
+
 
 
 
             val intent2 = intent
-
-            if(check3 < 0 || check4 < 0 ){
+// zero stars is allowed
+            if(check3 < 0 || check4 < 0 || check5 < 0 || check6 < 0 || check8 < 0) {
                 Toast.makeText(this, "You must answer all the questions", Toast.LENGTH_SHORT).show()
 
             }else {
                 radio3 = findViewById(check3)
                 radio4 = findViewById(check4)
                 radio5 = findViewById(check5) //
+                radio6 = findViewById(check6)
+                radio8 = findViewById(check8)
+
 
                 val thirdAns = radio3.text
                 val fourthAns = radio4.text
                 val fifthAns = radio5.text //
+                val sixthAns = radio6.text
+                val eighthAns = radio8.text
                 val parkName = intent2.getStringExtra("park")
-                val firstAns = intent2.getStringExtra("A1")
+                val firstAns = intent2.getStringExtra("A1") //from previous activity
                 val secondAns = intent2.getStringExtra("A2")
+
 
                 val intent1 = Intent(this, pageThreeSurvey::class.java)
 
@@ -76,6 +99,9 @@ class pageTwoSurvey : AppCompatActivity() {
                 intent1.putExtra("A3", thirdAns)
                 intent1.putExtra("A4", fourthAns)
                 intent1.putExtra("A5", fifthAns) // uncommented
+                intent1.putExtra("A6", sixthAns)
+                intent1.putExtra("A7", check7) // passed in number of stars
+                intent1.putExtra("A8", check8)
                 startActivity(intent1)
             }
 

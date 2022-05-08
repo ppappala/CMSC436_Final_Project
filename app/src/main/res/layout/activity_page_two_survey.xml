@@ -131,6 +131,60 @@
         </RadioGroup>
 
         <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="Were you able to participate in your planned activities?"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.064"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup4" />
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup8"
+            android:layout_width="191dp"
+            android:layout_height="265dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+            <RadioButton
+                android:id="@+id/rr1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#FF0015"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/rr2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#FF001E"
+                android:text="Mostly" />
+
+            <RadioButton
+                android:id="@+id/rr3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#FF0000"
+                android:text="Somewhat" />
+
+            <RadioButton
+                android:id="@+id/rr4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#FF0015"
+                android:text="Not at all" />
+
+        </RadioGroup>
+
+        <TextView
             android:id="@+id/textEnjoy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -141,7 +195,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.064"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup4" />
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup8" />
 
         <RadioGroup
             android:id="@+id/radioGroup5"
@@ -189,6 +243,84 @@
                 android:text="Very unpleasant" />
         </RadioGroup>
 
+
+        <TextView
+            android:id="@+id/textRec"
+            android:layout_width="391dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="40dp"
+            android:text="How likely are you to recommend this park to a friend?"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup5" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup6"
+            android:layout_width="191dp"
+            android:layout_height="265dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textRec">
+
+            <RadioButton
+                android:id="@+id/rec1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#FF0000"
+                android:text="Very Likely" />
+
+            <RadioButton
+                android:id="@+id/rec2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#FF0000"
+                android:text="Likely" />
+
+            <RadioButton
+                android:id="@+id/rec4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#FF0008"
+                android:text="Unlikely" />
+
+            <RadioButton
+                android:id="@+id/rec5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#FF0000"
+                android:text="Very Unlikely" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/starText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="Please Rate Us!"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup6" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:stepSize="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/starText" />
+
         <Button
             android:id="@+id/next2"
             android:layout_width="wrap_content"
@@ -196,6 +328,7 @@
             android:layout_marginTop="12dp"
             android:backgroundTint="#FF0F17"
             android:text="Next"
+            android:theme="@style/Widget.AppCompat.RatingBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -210,7 +343,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup5" />
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
         <TextView
             android:id="@+id/textView8"
