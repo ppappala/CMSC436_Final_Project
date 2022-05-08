@@ -1,8 +1,6 @@
 package com.example.parkmobilesurvey
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
@@ -15,21 +13,21 @@ class pageOneSurvey : AppCompatActivity() {
     private lateinit var next: Button
 
     private lateinit var complete: TextView
+    private lateinit var parkname: TextView
 
-    //added by keya
-    lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page_one_survey)
-    // shared pref added by keya
-        sharedPreferences = getSharedPreferences("sharedPref", Context.MODE_PRIVATE);
-
         group1 = findViewById(R.id.radioGroup)
         group2 = findViewById(R.id.radioGroup2)
 
 
         complete = findViewById(R.id.textView6)
+        parkname = findViewById(R.id.textView11)
+        val intent = intent
+        val parknaame = intent.getStringExtra("park")
+        parkname.text ="From"+ parknaame
         next = findViewById(R.id.next)
 
         next.setOnClickListener{
@@ -37,33 +35,19 @@ class pageOneSurvey : AppCompatActivity() {
             val check1 = group1.checkedRadioButtonId
             val check2 = group2.checkedRadioButtonId
 
-    // added by keya
-            //the checked radio button for first quesiton
-            val checkedRadio: Int = group1.checkedRadioButtonId
 
-            //the checked radio button for second quesiton
-            val checkedRadio2: Int = group2.checkedRadioButtonId
-
-            val editor: SharedPreferences.Editor = sharedPreferences.edit()
-
-            editor.putInt("firstAns", checkedRadio)
-            editor.putInt("secondAns", checkedRadio2)
-            editor.apply();
-
-            //-----------------
             if(check1 < 0 || check2< 0){
-                Toast.makeText(this, "you must click all question", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "You must answer all the questions", Toast.LENGTH_SHORT).show()
 
             }else{
                 complete.text = check1.toString() + check2.toString()
+                // create Intent here
+                // maybe use radiobutton variable = findViewByid(check1)
+                // and radiobutton variable2 = findViewByid(check2)
+                // save those variable in the intent (the string name of the button)
+                // Then start acitvity 2 for the second page
 
             }
-
-            val intent = Intent(this, pageTwoSurvey::class.java)
-
-            startActivity(intent)
-
-
         }
 
 
