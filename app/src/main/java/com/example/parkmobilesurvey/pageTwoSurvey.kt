@@ -100,7 +100,7 @@ class pageTwoSurvey : AppCompatActivity() {
                 intent1.putExtra("A4", fourthAns)
                 intent1.putExtra("A5", fifthAns) // uncommented
                 intent1.putExtra("A6", sixthAns)
-                intent1.putExtra("A7", check7) // passed in number of stars
+                intent1.putExtra("A7", check7.toString()) // passed in number of stars
                 intent1.putExtra("A8", eighthAns)
                 startActivity(intent1)
             }
